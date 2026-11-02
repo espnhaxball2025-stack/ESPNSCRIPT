@@ -4,7 +4,7 @@ var room = HBInit({
   roomName: ROOM_NAME,
   maxPlayers: 30,
   public: true,
-  token: "thr1.AAAAAGm0mLpJjwE0XF7RJw.5Hkzo2VV-nU"
+  token: "thr1.AAAAAGrn6WHYr6jorGwbOA.EEX9I_v6yHU"
 });
 
 var LINKS = {
