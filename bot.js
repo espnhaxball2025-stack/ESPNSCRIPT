@@ -1,6 +1,19 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
+const http = require('http');
 
+// 1. Levantamos un servidor HTTP interno para que Render (Web Service) no llore por los puertos
+const PORT = process.env.PORT || 3000;
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('⚽ Bot de EspnHaxball corriendo a pleno 24/7 en Web Service! ⚽\n');
+});
+
+server.listen(PORT, () => {
+    console.log(`Servidor HTTP falso/web escuchando en el puerto ${PORT}`);
+});
+
+// 2. Arrancamos el bot de Haxball con Puppeteer
 async function runBot() {
     console.log("Iniciando el bot de EspnHaxball...");
     const browser = await puppeteer.launch({
